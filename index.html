@@ -1,0 +1,118 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Polla Mundialista — FIFA World Cup 2026</title>
+
+  <!-- Google Fonts: Bebas Neue (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/bracket.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-brand">
+        <span class="brand-ball">⚽</span>
+        <div>
+          <h1 class="brand-title">Polla Mundialista</h1>
+          <p class="brand-sub">FIFA World Cup 2026 — USA · México · Canadá</p>
+        </div>
+      </div>
+      <div class="header-legend">
+        <span class="legend-dot legend-winner"></span><span>Ganador</span>
+        <span class="legend-dot legend-loser"></span><span>Eliminado</span>
+        <span class="legend-dot legend-pending"></span><span>Pendiente</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== BRACKET CONTAINER ===== -->
+  <main class="bracket-page">
+    <div class="bracket-scroll-wrapper">
+      <div class="bracket-grid" id="bracket-root">
+
+        <!-- Fase: Octavos de Final -->
+        <section class="phase" id="phase-r16">
+          <h2 class="phase-title">Octavos de Final</h2>
+          <div class="match-column" id="col-r16"></div>
+        </section>
+
+        <!-- Conectores R16 → QF -->
+        <div class="connectors-col" id="conn-r16-qf" aria-hidden="true"></div>
+
+        <!-- Fase: Cuartos de Final -->
+        <section class="phase" id="phase-qf">
+          <h2 class="phase-title">Cuartos de Final</h2>
+          <div class="match-column" id="col-qf"></div>
+        </section>
+
+        <!-- Conectores QF → SF -->
+        <div class="connectors-col" id="conn-qf-sf" aria-hidden="true"></div>
+
+        <!-- Fase: Semifinales -->
+        <section class="phase" id="phase-sf">
+          <h2 class="phase-title">Semifinales</h2>
+          <div class="match-column" id="col-sf"></div>
+        </section>
+
+        <!-- Conectores SF → Final -->
+        <div class="connectors-col" id="conn-sf-fin" aria-hidden="true"></div>
+
+        <!-- Fase: Final + 3er puesto -->
+        <section class="phase phase--final" id="phase-final">
+          <h2 class="phase-title phase-title--gold">Final</h2>
+          <div class="match-column" id="col-final"></div>
+
+          <h2 class="phase-title phase-title--bronze" style="margin-top: 2.5rem;">3er Puesto</h2>
+          <div class="match-column" id="col-third"></div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== MODAL ===== -->
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" aria-label="Cerrar">✕</button>
+      <p class="modal-match-label" id="modal-match-label"></p>
+      <h3 class="modal-title" id="modal-title">Resultado del partido</h3>
+
+      <div class="modal-score-row">
+        <span class="modal-team" id="modal-team1-name">—</span>
+        <input class="modal-score-input" id="modal-score1" type="number" min="0" max="30" value="0" />
+      </div>
+      <div class="modal-vs">vs</div>
+      <div class="modal-score-row">
+        <span class="modal-team" id="modal-team2-name">—</span>
+        <input class="modal-score-input" id="modal-score2" type="number" min="0" max="30" value="0" />
+      </div>
+
+      <div class="modal-penalty" id="modal-penalty-section" style="display:none">
+        <p class="modal-penalty-label">Empate — ¿quién gana por penales?</p>
+        <div class="modal-penalty-btns">
+          <button class="btn-penalty" id="btn-pen-t1"></button>
+          <button class="btn-penalty" id="btn-pen-t2"></button>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn-cancel" id="modal-cancel">Cancelar</button>
+        <button class="btn-confirm" id="modal-confirm">Confirmar resultado</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SCRIPTS (módulos) ===== -->
+  <script type="module" src="js/main.js"></script>
+</body>
