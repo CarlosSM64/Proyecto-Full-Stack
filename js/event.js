@@ -1,3 +1,7 @@
+import { R16_MATCHES, QF_MATCHES, SF_MATCHES, FINAL_MATCH, THIRD_MATCH } from './data.js';
+import { resolveTeam } from './store.js';
+import { openModal } from './modal.js';
+
 document.getElementById('bracket-root');
 
 /** Combina todas las definiciones de partidos en un mapa id → label */

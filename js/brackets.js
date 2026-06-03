@@ -1,3 +1,7 @@
+import { R16_MATCHES, QF_MATCHES, SF_MATCHES, FINAL_MATCH, THIRD_MATCH } from './data.js';
+import { getState, resolveTeam } from './store.js';
+import { initEvents } from './event.js';
+
 const colR16   = document.getElementById('col-r16');
 const colQF    = document.getElementById('col-qf');
 const colSF    = document.getElementById('col-sf');
@@ -137,11 +141,11 @@ function renderFinal(container, match, results) {
 }
 
 /* ── TERCER PUESTO ── */
-function renderThird(container, match, results) {
-  container.innerHTML = '';
-  const pair = buildMatchPair(match, results, 'match-pair--third');
-  container.appendChild(pair);
-}
+  function renderThird(container, match, results) {
+    container.innerHTML = '';
+    const pair = buildMatchPair(match, results, 'match-pair--third');
+    container.appendChild(pair);
+  }
 
 /* ── CONECTORES SVG ── */
 /**
@@ -150,19 +154,8 @@ function renderThird(container, match, results) {
  * @param {HTMLElement} container
  * @param {number} pairsCount  número de pares en la fase ORIGEN (izquierda)
  */
-function renderThird(container, match, results) {
-  container.innerHTML = '';
-  const pair = buildMatchPair(match, results, 'match-pair--third');
-  container.appendChild(pair);
-}
 
-/* ── CONECTORES SVG ── */
-/**
- * Genera conectores visuales entre columnas.
- * Cada conector une dos pares de la fase anterior con un par de la fase siguiente.
- * @param {HTMLElement} container
- * @param {number} pairsCount  número de pares en la fase ORIGEN (izquierda)
- */
+
 function renderConnectors(container, pairsCount) {
   container.innerHTML = '';
   const groups = pairsCount / 2; // número de conectores (cada uno une 2 pares)

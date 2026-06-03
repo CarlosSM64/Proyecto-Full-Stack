@@ -1,3 +1,4 @@
+
 /** Equipos clasificados (representativos). Ampliar con los 48 reales. */
 export const TEAMS = {
   '1A': { name: 'Argentina',     flag: '🇦🇷', group: 'A' },

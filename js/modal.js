@@ -1,3 +1,6 @@
+import { resolveTeam, setResult } from './store.js';
+
+
 const backdrop      = document.getElementById('modal-backdrop');
 const closeBtn      = document.getElementById('modal-close');
 const cancelBtn     = document.getElementById('modal-cancel');

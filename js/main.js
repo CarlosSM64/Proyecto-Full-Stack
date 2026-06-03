@@ -1,6 +1,6 @@
-import { loadFromStorage, subscribe } from './localstorage.js';
+import { loadFromStorage, subscribe } from './store.js';
 import { R16_MATCHES, QF_MATCHES, SF_MATCHES, FINAL_MATCH, THIRD_MATCH } from './data.js';
-import { resolveTeam } from './localstorage.js';
+import { resolveTeam } from './store.js';
 import { initEvents } from './event.js';
 import { initModal } from './modal.js';
 import { renderBracket } from './brackets.js';

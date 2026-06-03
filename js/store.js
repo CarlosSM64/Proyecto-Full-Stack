@@ -1,3 +1,6 @@
+import {R16_MATCHES, QF_MATCHES, SF_MATCHES, FINAL_MATCH, THIRD_MATCH, TEAMS } from './data.js';
+import { initModal } from './modal.js';
+
 const STORAGE_KEY = 'wc2026_bracket_v1';
 
 /**
